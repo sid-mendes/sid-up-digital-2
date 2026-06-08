@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sid Up Digital – Gestão de Google Meu Negócio</title>
+  <meta name="description" content="Apareça no Google Maps, atraia mais clientes locais e transforme buscas em vendas com a Gestão profissional de Google Meu Negócio da Sid Up Digital." />
+
+  <!-- =====================================================
+       GOOGLE TAG MANAGER
+       Substitua GTM-XXXXXXX pelo ID real do seu contêiner GTM
+  ====================================================== -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- Fim do Google Tag Manager -->
+
+  <!-- =====================================================
+       GOOGLE ANALYTICS 4 (GA4)
+       Substitua G-XXXXXXXXXX pelo Measurement ID real do GA4
+  ====================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); // ← Substitua pelo Measurement ID real
+  </script>
+  <!-- Fim do GA4 -->
+
+  <!-- =====================================================
+       META PIXEL (FACEBOOK / INSTAGRAM ADS)
+       Substitua 1234567890 pelo ID real do seu Pixel da Meta
+  ====================================================== -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1234567890'); // ← Substitua pelo ID real do Pixel da Meta
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <!-- Substitua 1234567890 pelo ID real do Pixel da Meta -->
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1" alt="Meta Pixel" />
+  </noscript>
+  <!-- Fim do Meta Pixel -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       VARIÁVEIS & RESET
+    ═══════════════════════════════════════════════ */
+    :root {
+      --black: #0a0a0a;
+      --black-soft: #111111;
+      --black-card: #161616;
+      --gold: #C9A84C;
+      --gold-light: #e8c96b;
+      --gold-dim: rgba(201,168,76,0.15);
+      --white: #fafafa;
+      --white-dim: rgba(250,250,250,0.08);
+      --text-muted: rgba(250,250,250,0.55);
+      --radius: 4px;
+      --radius-lg: 12px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ═══════════════════════════════════════════════
+       UTILITÁRIOS
+    ═══════════════════════════════════════════════ */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .gold { color: var(--gold); }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+    .divider {
+      width: 56px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 28px;
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 16px 34px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--gold);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-outline:hover {
+      background: var(--gold-dim);
+    }
+
+    /* ═══════════════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════════════ */
+    #header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100px;
+      gap: 24px;
+    }
+    .logo-wrap img {
+      height: 100px;
+      width: auto;
+    }
+    .logo-fallback {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--white);
+    }
+    .logo-fallback span { color: var(--gold); }
+
+    nav { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(250,250,250,0.75);
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-icons { display: flex; align-items: center; gap: 14px; }
+
+    .btn-ig {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: var(--transition);
+    }
+    .btn-ig:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-ig svg { width: 16px; height: 16px; }
+
+    .btn-google-review {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white-dim);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 8px 13px;
+      border-radius: 20px;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-google-review:hover { background: var(--gold-dim); }
+    .btn-google-review svg { width: 14px; height: 14px; }
+
+    /* Hamburguer */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      border: none;
+      background: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: var(--black-soft);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: 16px 24px 24px;
+    }
+    .mobile-menu a {
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: rgba(250,250,250,0.8);
+      transition: var(--transition);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold); padding-left: 8px; }
+    .mobile-menu.open { display: flex; }
+
+    /* ═══════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════ */
+    #inicio {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 30px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 22px;
+      color: var(--white);
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 38px;
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    .hero-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .hero-badge svg { color: var(--gold); }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-stat-item { display: flex; flex-direction: column; gap: 2px; }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* Hero right – visual card */
+    .hero-visual {
+      position: relative;
+    }
+    .hero-card {
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .hc-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .benefit-list { display: flex; flex-direction: column; gap: 12px; }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px;
+      background: var(--white-dim);
+      border-radius: var(--radius);
+      border-left: 2px solid var(--gold);
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+    .benefit-item:hover { background: var(--gold-dim); }
+    .bi-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .bi-text strong { display: block; font-size: 0.9rem; margin-bottom: 2px; color: var(--white); }
+    .bi-text span { font-size: 0.8rem; color: var(--text-muted); }
+
+    .float-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      line-height: 1.3;
+      box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+    }
+
+    /* ═══════════════════════════════════════════════
+       COMO FUNCIONA / BENEFÍCIOS
+    ═══════════════════════════════════════════════ */
+    #beneficios {
+      padding: 96px 0;
+      background: var(--black-soft);
+      position: relative;
+    }
+    #beneficios::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .beneficios-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .gmb-explain {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .benefit-card {
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .benefit-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(201,168,76,0.12);
+    }
+    .benefit-card .icon { font-size: 2rem; margin-bottom: 10px; }
+    .benefit-card h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .benefit-card p { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ═══════════════════════════════════════════════
+       SERVIÇOS (ACORDEÃO)
+    ═══════════════════════════════════════════════ */
+    #servicos {
+      padding: 96px 0;
+      background: var(--black);
+    }
+    .servicos-header { text-align: center; margin-bottom: 56px; }
+    .servicos-header .divider { margin: 0 auto 28px; }
+
+    .accordion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .accordion-item {
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .accordion-item.open { border-color: rgba(201,168,76,0.35); }
+
+    .accordion-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      text-align: left;
+    }
+    .accordion-btn-left { display: flex; align-items: center; gap: 14px; }
+    .accordion-icon-wrap {
+      width: 40px; height: 40px;
+      background: var(--gold-dim);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .accordion-btn h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .accordion-arrow {
+      width: 24px; height: 24px;
+      border: 1.5px solid rgba(201,168,76,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      font-size: 0.75rem;
+      transition: var(--transition);
+    }
+    .accordion-item.open .accordion-arrow { transform: rotate(180deg); background: var(--gold-dim); }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+    }
+    .accordion-body.open { max-height: 600px; }
+
+    .accordion-body-inner {
+      padding: 0 24px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .service-items { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; }
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(250,250,250,0.75);
+    }
+    .service-item::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════
+       SOBRE
+    ═══════════════════════════════════════════════ */
+    #sobre {
+      padding: 96px 0;
+      background: var(--black-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    #sobre::after {
+      content: '"';
+      position: absolute;
+      right: -30px;
+      top: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 28rem;
+      color: rgba(201,168,76,0.03);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .sobre-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .sobre-text p {
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .sobre-features {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sobre-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .sobre-feature:hover { border-color: rgba(201,168,76,0.3); }
+    .sf-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .sf-text strong { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
+    .sf-text span { font-size: 0.8rem; color: var(--text-muted); }
+
+    .sobre-tagline {
+      margin-top: 32px;
+      padding: 24px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius-lg);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════════════ */
+    #faq {
+      padding: 96px 0;
+      background: var(--black);
+    }
+    .faq-header { text-align: center; margin-bottom: 56px; }
+    .faq-header .divider { margin: 0 auto 28px; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto 48px; }
+
+    .faq-item {
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .faq-item.open { border-color: rgba(201,168,76,0.3); }
+
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-btn span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+    }
+    .faq-toggle {
+      width: 30px; height: 30px;
+      background: var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: var(--transition);
+      line-height: 1;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); background: rgba(201,168,76,0.25); }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .faq-body.open { max-height: 300px; }
+    .faq-body-inner {
+      padding: 0 24px 22px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+    }
+    .faq-body.open .faq-body-inner { display: block; }
+
+    .faq-cta-box {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+    }
+    .faq-cta-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .faq-cta-box p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.75;
+    }
+
+    /* ═══════════════════════════════════════════════
+       FORMULÁRIO DE CONTATO
+    ═══════════════════════════════════════════════ */
+    #contato {
+      padding: 96px 0;
+      background: var(--black-soft);
+      position: relative;
+    }
+    #contato::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .contato-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .contato-info .section-title { margin-bottom: 16px; }
+    .contato-info p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .contato-items { display: flex; flex-direction: column; gap: 16px; }
+    .contato-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
+    .ci-icon {
+      width: 40px; height: 40px;
+      background: var(--gold-dim);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .ci-text strong { display: block; color: var(--white); font-size: 0.85rem; margin-bottom: 2px; }
+    .ci-text span { color: var(--text-muted); font-size: 0.82rem; }
+
+    .form-card {
+      background: var(--black-card);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .form-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .form-card .form-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 13px 16px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      color: var(--white);
+      outline: none;
+      transition: var(--transition);
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.05);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+    }
+    .form-group input::placeholder { color: rgba(250,250,250,0.3); }
+    .form-group select option { background: var(--black-card); }
+    .form-group .error-msg {
+      display: none;
+      font-size: 0.75rem;
+      color: #e06060;
+      margin-top: 5px;
+    }
+    .form-group.invalid input,
+    .form-group.invalid select { border-color: #e06060; }
+    .form-group.invalid .error-msg { display: block; }
+
+    .form-submit {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 17px;
+      margin-top: 8px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px;
+    }
+    .form-success .success-icon { font-size: 3rem; margin-bottom: 12px; }
+    .form-success h4 { font-size: 1.1rem; font-weight: 600; color: var(--gold); margin-bottom: 8px; }
+    .form-success p { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* ═══════════════════════════════════════════════
+       RODAPÉ
+    ═══════════════════════════════════════════════ */
+    footer {
+      background: #060606;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 48px 0 32px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline {
+      font-size: 1rem;
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .footer-tagline-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-social { display: flex; justify-content: center; gap: 14px; margin-bottom: 28px; }
+    .footer-social a {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-whatsapp-line {
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-whatsapp-line a { color: var(--gold); font-weight: 600; }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(250,250,250,0.3);
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ═══════════════════════════════════════════════
+       BOTÃO FLUTUANTE WHATSAPP
+    ═══════════════════════════════════════════════ */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+      transition: var(--transition);
+      animation: floatIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 1s both;
+    }
+    .wa-float:hover {
+      background: #1ebe5b;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(37,211,102,0.5);
+    }
+    .wa-float svg { width: 28px; height: 28px; flex-shrink: 0; }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(24px) scale(0.8); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVO
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .beneficios-inner,
+      .sobre-inner,
+      .contato-inner { grid-template-columns: 1fr; gap: 40px; }
+      .accordion-grid { grid-template-columns: 1fr; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; }
+      .hero-visual { display: none; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .btn-google-review .btn-label { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-stats { gap: 20px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+      .faq-cta-box { padding: 28px 20px; }
+      .wa-float .wa-text { display: none; }
+      .wa-float { padding: 14px; border-radius: 50%; }
+      .hero-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =====================================================
+     GTM NOSCRIPT (logo após abertura do body)
+     Substitua GTM-XXXXXXX pelo ID real do seu contêiner GTM
+====================================================== -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+          height="0" width="0" style="display:none;visibility:hidden" title="GTM noscript"></iframe>
+</noscript>
+<!-- Fim GTM noscript -->
+
+<!-- ═══ HEADER ═══════════════════════════════════════ -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="#inicio" class="logo-wrap nav-link" data-target="inicio">
+        <img src="img/logo-sid-up-digital.png" alt="Logo Sid Up Digital"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <div class="logo-fallback" style="display:none">Sid <span>Up</span> Digital</div>
+      </a>
+
+      <!-- Nav (desktop) -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link" data-target="inicio">Início</a></li>
+          <li><a href="#servicos" class="nav-link" data-target="servicos">Serviços</a></li>
+          <li><a href="#sobre" class="nav-link" data-target="sobre">Sobre</a></li>
+          <li><a href="#faq" class="nav-link" data-target="faq">FAQ</a></li>
+          <li><a href="#contato" class="nav-link" data-target="contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ícones -->
+      <div class="nav-icons">
+        <a href="https://www.instagram.com/sid_up_digital" target="_blank" rel="noopener" class="btn-ig" aria-label="Instagram Sid Up Digital">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#inicio" class="nav-link" data-target="inicio">Início</a>
+    <a href="#servicos" class="nav-link" data-target="servicos">Serviços</a>
+    <a href="#sobre" class="nav-link" data-target="sobre">Sobre</a>
+    <a href="#faq" class="nav-link" data-target="faq">FAQ</a>
+    <a href="#contato" class="nav-link" data-target="contato">Contato</a>
+  </nav>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════ -->
+<section id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Gestão de Google Meu Negócio</div>
+        <h1 class="hero-h1">
+          Sua empresa está perdendo clientes todos os dias porque
+          <em>não aparece no Google Maps.</em>
+        </h1>
+        <p class="hero-sub">
+          Enquanto isso, seus concorrentes estão faturando com as buscas que deveriam encontrar você.
+          Posicione sua empresa no Google Maps, aumente sua visibilidade local e transforme pesquisas em clientes reais — sem depender apenas das redes sociais.
+        </p>
+        <div class="hero-cta">
+          <a href="https://wa.me/5585987680142?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20gr%C3%A1tis%20do%20meu%20Google%20Meu%20Neg%C3%B3cio"
+             target="_blank" rel="noopener" class="btn-gold">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.12 1.533 5.853L.057 23.57a.5.5 0 00.611.665l5.93-1.562A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.239-1.486l-.375-.224-3.882 1.022 1.018-3.768-.246-.395A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Faça uma análise grátis
+          </a>
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Análise gratuita, sem compromisso
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <p class="hc-title">Por que o Google Meu Negócio?</p>
+          <ul class="benefit-list">
+            <li class="benefit-item">
+              <span class="bi-icon">📍</span>
+              <div class="bi-text">
+                <strong>Mais visibilidade local</strong>
+                <span>Apareça para quem está procurando agora</span>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <span class="bi-icon">📞</span>
+              <div class="bi-text">
+                <strong>Mais ligações e WhatsApp</strong>
+                <span>Clientes que chegam prontos para comprar</span>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <span class="bi-icon">🗺️</span>
+              <div class="bi-text">
+                <strong>Mais solicitações de rota</strong>
+                <span>Mais visitas físicas ao seu estabelecimento</span>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <span class="bi-icon">⭐</span>
+              <div class="bi-text">
+                <strong>Reputação fortalecida</strong>
+                <span>Avaliações que geram confiança e autoridade</span>
+              </div>
+            </li>
+          </ul>
+          <div class="float-badge">Análise<br>100% Gratuita</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFÍCIOS ════════════════════════════════════ -->
+<section id="beneficios">
+  <div class="container">
+    <div class="beneficios-inner">
+      <div>
+        <span class="section-label">O que é</span>
+        <h2 class="section-title">Google Meu Negócio:<br>sua vitrine no Google</h2>
+        <div class="divider"></div>
+        <p class="gmb-explain">
+          O <strong style="color:var(--white)">Perfil de Empresa no Google</strong> é o cartão de visitas digital do seu negócio — aquele resultado com fotos, avaliações, telefone e endereço que aparece no Google e no Google Maps quando alguém pesquisa por um serviço na sua cidade.
+        </p>
+        <p class="gmb-explain">
+          A <strong style="color:var(--white)">Sid Up Digital</strong> gerencia e otimiza seu perfil de ponta a ponta, fazendo sua empresa aparecer antes dos concorrentes exatamente no momento em que o cliente está pronto para contratar ou comprar.
+        </p>
+        <a href="https://wa.me/5585987680142?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20gr%C3%A1tis%20do%20meu%20Google%20Meu%20Neg%C3%B3cio"
+           target="_blank" rel="noopener" class="btn-outline">
+          Falar com especialista →
+        </a>
+      </div>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="icon">🔍</div>
+          <h4>Visibilidade local</h4>
+          <p>Apareça nas buscas quando o cliente mais precisa de você</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">📲</div>
+          <h4>Mais contatos</h4>
+          <p>Ligações e mensagens diretas do perfil para o seu negócio</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">🗺️</div>
+          <h4>Rotas no Maps</h4>
+          <p>Clientes que solicitam rota têm altíssima intenção de visita</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">⭐</div>
+          <h4>Autoridade digital</h4>
+          <p>Avaliações positivas que aumentam a confiança e o ranking</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">📊</div>
+          <h4>Dados e insights</h4>
+          <p>Relatórios mensais para acompanhar o crescimento real</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">🏆</div>
+          <h4>Vantagem competitiva</h4>
+          <p>Supere concorrentes que ainda não investem no perfil</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVIÇOS ══════════════════════════════════════ -->
+<section id="servicos">
+  <div class="container">
+    <div class="servicos-header">
+      <span class="section-label">O que fazemos</span>
+      <h2 class="section-title">Serviços completos de gestão</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);max-width:560px;margin:0 auto;font-size:0.95rem;">Clique em cada categoria para ver o que está incluído na nossa gestão completa.</p>
+    </div>
+
+    <div class="accordion-grid">
+
+      <!-- A -->
+      <div class="accordion-item" id="acc-a">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="body-a">
+          <div class="accordion-btn-left">
+            <div class="accordion-icon-wrap">⚙️</div>
+            <h3>Configuração Inicial</h3>
+          </div>
+          <div class="accordion-arrow">▾</div>
+        </button>
+        <div class="accordion-body" id="body-a" role="region">
+          <div class="accordion-body-inner">
+            <ul class="service-items">
+              <li class="service-item">Criação do perfil no Google Meu Negócio</li>
+              <li class="service-item">Verificação da empresa</li>
+              <li class="service-item">Configuração de categorias principais e secundárias</li>
+              <li class="service-item">Cadastro de produtos e serviços</li>
+              <li class="service-item">Inserção de horário de funcionamento</li>
+              <li class="service-item">Configuração de área de atendimento</li>
+              <li class="service-item">Criação de descrição otimizada para SEO local</li>
+              <li class="service-item">Inclusão de telefone, site e redes sociais</li>
+              <li class="service-item">Upload de fotos profissionais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="accordion-item" id="acc-b">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="body-b">
+          <div class="accordion-btn-left">
+            <div class="accordion-icon-wrap">🚀</div>
+            <h3>Otimização do Perfil</h3>
+          </div>
+          <div class="accordion-arrow">▾</div>
+        </button>
+        <div class="accordion-body" id="body-b" role="region">
+          <div class="accordion-body-inner">
+            <ul class="service-items">
+              <li class="service-item">Revisão completa do perfil</li>
+              <li class="service-item">Otimização para aparecer nas buscas locais</li>
+              <li class="service-item">Pesquisa de palavras-chave locais</li>
+              <li class="service-item">Melhoria da relevância do perfil</li>
+              <li class="service-item">Atualização constante de informações</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="accordion-item" id="acc-c">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="body-c">
+          <div class="accordion-btn-left">
+            <div class="accordion-icon-wrap">⭐</div>
+            <h3>Gestão de Avaliações</h3>
+          </div>
+          <div class="accordion-arrow">▾</div>
+        </button>
+        <div class="accordion-body" id="body-c" role="region">
+          <div class="accordion-body-inner">
+            <ul class="service-items">
+              <li class="service-item">Monitoramento diário das avaliações</li>
+              <li class="service-item">Respostas profissionais para avaliações positivas</li>
+              <li class="service-item">Respostas estratégicas para avaliações negativas</li>
+              <li class="service-item">Criação de campanhas para captar novas avaliações</li>
+              <li class="service-item">Relatórios de reputação online</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- D -->
+      <div class="accordion-item" id="acc-d">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="body-d">
+          <div class="accordion-btn-left">
+            <div class="accordion-icon-wrap">📝</div>
+            <h3>Publicações Semanais</h3>
+          </div>
+          <div class="accordion-arrow">▾</div>
+        </button>
+        <div class="accordion-body" id="body-d" role="region">
+          <div class="accordion-body-inner">
+            <ul class="service-items">
+              <li class="service-item">Criação de posts para o perfil</li>
+              <li class="service-item">Divulgação de promoções</li>
+              <li class="service-item">Divulgação de produtos e serviços</li>
+              <li class="service-item">Eventos e novidades da empresa</li>
+              <li class="service-item">Chamadas para WhatsApp</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- E -->
+      <div class="accordion-item" id="acc-e">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="body-e">
+          <div class="accordion-btn-left">
+            <div class="accordion-icon-wrap">📊</div>
+            <h3>Relatórios e Monitoramento</h3>
+          </div>
+          <div class="accordion-arrow">▾</div>
+        </button>
+        <div class="accordion-body" id="body-e" role="region">
+          <div class="accordion-body-inner">
+            <ul class="service-items">
+              <li class="service-item">Relatório mensal de desempenho</li>
+              <li class="service-item">Quantidade de visualizações</li>
+              <li class="service-item">Cliques para ligação e WhatsApp</li>
+              <li class="service-item">Solicitações de rota</li>
+              <li class="service-item">Palavras-chave que geram visitas</li>
+              <li class="service-item">Comparação de crescimento mensal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- F -->
+      <div class="accordion-item" id="acc-f">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="body-f">
+          <div class="accordion-btn-left">
+            <div class="accordion-icon-wrap">📷</div>
+            <h3>Gestão de Conteúdo Visual</h3>
+          </div>
+          <div class="accordion-arrow">▾</div>
+        </button>
+        <div class="accordion-body" id="body-f" role="region">
+          <div class="accordion-body-inner">
+            <ul class="service-items">
+              <li class="service-item">Atualização de fotos</li>
+              <li class="service-item">Organização da galeria do perfil</li>
+              <li class="service-item">Inserção de vídeos curtos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- G (full width) -->
+      <div class="accordion-item" id="acc-g" style="grid-column:1/-1;">
+        <button class="accordion-btn" aria-expanded="false" aria-controls="body-g">
+          <div class="accordion-btn-left">
+            <div class="accordion-icon-wrap">🏆</div>
+            <h3>Serviços Avançados</h3>
+          </div>
+          <div class="accordion-arrow">▾</div>
+        </button>
+        <div class="accordion-body" id="body-g" role="region">
+          <div class="accordion-body-inner">
+            <ul class="service-items">
+              <li class="service-item">SEO Local — estratégias para dominar as buscas locais</li>
+              <li class="service-item">Estratégia avançada para aparecer no Google Maps</li>
+              <li class="service-item">Análise da concorrência local</li>
+              <li class="service-item">Auditoria completa do perfil</li>
+              <li class="service-item">Integração e otimização do link do WhatsApp</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOBRE ══════════════════════════════════════════ -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-inner">
+      <div class="sobre-text">
+        <span class="section-label">Quem somos</span>
+        <h2 class="section-title">Transformamos buscas no Google em oportunidades de venda</h2>
+        <div class="divider"></div>
+        <p>
+          Na <strong style="color:var(--white)">Sid Up Digital</strong>, ajudamos empresas locais a conquistarem mais visibilidade, autoridade e clientes através do Google Meu Negócio e Google Maps.
+        </p>
+        <p>
+          Sabemos que hoje não basta apenas ter um perfil cadastrado. Quando um potencial cliente pesquisa por um serviço, o Google mostra primeiro as empresas mais relevantes e bem otimizadas. É exatamente aí que entramos.
+        </p>
+        <p>
+          Nossa missão é transformar sua presença no Google em uma <strong style="color:var(--white)">máquina de geração de oportunidades</strong>, otimizando seu perfil para que sua empresa seja encontrada por quem realmente está procurando pelos seus produtos ou serviços.
+        </p>
+        <p>
+          Enquanto seus concorrentes disputam atenção nas redes sociais, nós ajudamos sua empresa a ser encontrada exatamente no momento em que o cliente está pronto para comprar.
+        </p>
+        <div class="sobre-tagline">
+          "Sid Up Digital — Transformando buscas no Google em oportunidades de venda."
+        </div>
+      </div>
+      <div class="sobre-features">
+        <div class="sobre-feature">
+          <span class="sf-icon">⚙️</span>
+          <div class="sf-text">
+            <strong>Configuração e otimização completa</strong>
+            <span>Do zero ao perfil 100% otimizado e pronto para rankear</span>
+          </div>
+        </div>
+        <div class="sobre-feature">
+          <span class="sf-icon">📍</span>
+          <div class="sf-text">
+            <strong>Posicionamento no Google Maps</strong>
+            <span>Estratégias para aparecer no topo das buscas locais</span>
+          </div>
+        </div>
+        <div class="sobre-feature">
+          <span class="sf-icon">⭐</span>
+          <div class="sf-text">
+            <strong>Gestão de avaliações e reputação</strong>
+            <span>Respostas profissionais e campanhas de captação de reviews</span>
+          </div>
+        </div>
+        <div class="sobre-feature">
+          <span class="sf-icon">🔄</span>
+          <div class="sf-text">
+            <strong>Atualização constante</strong>
+            <span>Informações, produtos, serviços e publicações sempre frescos</span>
+          </div>
+        </div>
+        <div class="sobre-feature">
+          <span class="sf-icon">📈</span>
+          <div class="sf-text">
+            <strong>Estratégias de visibilidade local</strong>
+            <span>Palavras-chave, SEO local e análise da concorrência</span>
+          </div>
+        </div>
+        <div class="sobre-feature">
+          <span class="sf-icon">📊</span>
+          <div class="sf-text">
+            <strong>Relatórios e acompanhamento</strong>
+            <span>Métricas reais para medir cada resultado conquistado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══════════════════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <span class="section-label">Dúvidas frequentes</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span>O que é o Google Meu Negócio?</span>
+          <div class="faq-toggle">+</div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            O Google Meu Negócio é o perfil da sua empresa que aparece no Google e no Google Maps quando alguém procura pelos seus produtos ou serviços. Um perfil bem configurado aumenta sua visibilidade e facilita que clientes encontrem e entrem em contato com você.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Minha empresa já está no Google. Ainda preciso desse serviço?</span>
+          <div class="faq-toggle">+</div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            Sim. Apenas estar cadastrado não significa que sua empresa está otimizada para aparecer nas buscas. A configuração correta de categorias, descrições, fotos, avaliações e atualizações frequentes fazem toda a diferença no posicionamento — e é exatamente isso que a Sid Up Digital cuida para você.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Em quanto tempo posso começar a ver resultados?</span>
+          <div class="faq-toggle">+</div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            Os resultados variam conforme a concorrência, localização e situação atual do perfil. Muitas empresas já percebem aumento de visualizações, ligações e solicitações de rota nas primeiras semanas após a otimização.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Preciso ter um site para aparecer no Google Maps?</span>
+          <div class="faq-toggle">+</div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            Não. É possível ter excelentes resultados apenas com um perfil bem configurado no Google Meu Negócio. No entanto, ter um site pode potencializar ainda mais sua presença online — e podemos orientá-lo sobre isso também.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Como as avaliações ajudam meu negócio?</span>
+          <div class="faq-toggle">+</div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            As avaliações aumentam a confiança dos clientes e são um dos principais fatores que influenciam a visibilidade da sua empresa no Google. Quanto mais avaliações autênticas e positivas, maiores as chances de atrair novos clientes e de aparecer antes dos concorrentes.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Vocês atendem qualquer tipo de empresa?</span>
+          <div class="faq-toggle">+</div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            Sim. Atendemos empresas locais, prestadores de serviços, clínicas, restaurantes, lojas, escritórios, profissionais autônomos e diversos outros segmentos que desejam aumentar sua presença no Google e atrair mais clientes.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Como funciona a contratação?</span>
+          <div class="faq-toggle">+</div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            Após o contato, realizamos uma análise gratuita do seu perfil atual, identificamos oportunidades de melhoria e apresentamos a melhor estratégia para aumentar sua visibilidade no Google e atrair mais clientes para o seu negócio. Simples assim.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA box -->
+    <div class="faq-cta-box">
+      <h3>Ainda tem dúvidas?</h3>
+      <p>
+        Fale conosco pelo WhatsApp e receba uma análise da sua presença no Google.<br>
+        <strong style="color:var(--gold)">Sua empresa pode estar perdendo clientes neste exato momento</strong> para concorrentes que aparecem primeiro nas buscas.
+      </p>
+      <a href="https://wa.me/5585987680142?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20gr%C3%A1tis%20do%20meu%20Google%20Meu%20Neg%C3%B3cio"
+         target="_blank" rel="noopener" class="btn-gold">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.12 1.533 5.853L.057 23.57a.5.5 0 00.611.665l5.93-1.562A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.239-1.486l-.375-.224-3.882 1.022 1.018-3.768-.246-.395A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Tirar dúvidas no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTATO / FORMULÁRIO ══════════════════════════ -->
+<section id="contato">
+  <div class="container">
+    <div class="contato-inner">
+      <div class="contato-info">
+        <span class="section-label">Análise gratuita</span>
+        <h2 class="section-title">Sua próxima venda pode estar a uma busca de distância</h2>
+        <div class="divider"></div>
+        <p>
+          Preencha o formulário ao lado e nossa equipe entrará em contato para realizar uma <strong style="color:var(--gold)">análise gratuita do seu perfil no Google</strong> e mostrar como sua empresa pode atrair mais clientes locais.
+        </p>
+        <div class="contato-items">
+          <div class="contato-item">
+            <div class="ci-icon">📱</div>
+            <div class="ci-text">
+              <strong>WhatsApp</strong>
+              <span><a href="https://wa.me/5585987680142" target="_blank" rel="noopener" style="color:var(--gold)">(85) 98768-0142</a></span>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="ci-icon">📸</div>
+            <div class="ci-text">
+              <strong>Instagram</strong>
+              <span><a href="https://www.instagram.com/sid_up_digital" target="_blank" rel="noopener" style="color:var(--gold)">@sid_up_digital</a></span>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="ci-icon">⭐</div>
+            <div class="ci-text">
+              <strong>Avalie nossa empresa</strong>
+              <span><a href="https://g.page/r/CZ_rHaK3Rhn_EBM/review" target="_blank" rel="noopener" style="color:var(--gold)">Deixar avaliação no Google</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3>Solicite sua análise gratuita</h3>
+        <p class="form-sub">Preencha abaixo e entraremos em contato em até 24 horas.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-group" id="fg-nome">
+            <label for="f-nome">Nome completo *</label>
+            <input type="text" id="f-nome" name="nome" placeholder="Seu nome" autocomplete="name" />
+            <span class="error-msg">Por favor, informe seu nome.</span>
+          </div>
+          <div class="form-group" id="fg-tel">
+            <label for="f-tel">Telefone / WhatsApp *</label>
+            <input type="tel" id="f-tel" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel" />
+            <span class="error-msg">Por favor, informe seu telefone.</span>
+          </div>
+          <div class="form-group" id="fg-email">
+            <label for="f-email">Seu melhor e-mail *</label>
+            <input type="email" id="f-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" />
+            <span class="error-msg">Por favor, informe um e-mail válido.</span>
+          </div>
+          <div class="form-group" id="fg-negocio">
+            <label for="f-negocio">Tipo de negócio *</label>
+            <select id="f-negocio" name="negocio">
+              <option value="">Selecione seu segmento...</option>
+              <option>Restaurante / Lanchonete / Café</option>
+              <option>Clínica / Consultório / Saúde</option>
+              <option>Loja / Comércio</option>
+              <option>Prestador de Serviços</option>
+              <option>Escritório / Profissional Liberal</option>
+              <option>Autônomo</option>
+              <option>Outro</option>
+            </select>
+            <span class="error-msg">Por favor, selecione seu segmento.</span>
+          </div>
+          <button type="submit" class="btn-gold form-submit">
+            Solicitar análise gratuita
+          </button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <h4>Mensagem enviada com sucesso!</h4>
+          <p>Em breve nossa equipe entrará em contato para realizar sua análise gratuita. Obrigado!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RODAPÉ ════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <img src="img/logo-sid-up-digital.png" alt="Logo Sid Up Digital" style="height:250px; width:auto; margin: 0 auto 12px;" />
+    <p class="footer-tagline">"Transformando buscas no Google em oportunidades de venda."</p>
+    <p class="footer-tagline-sub">
+      Sua próxima venda pode estar a uma busca de distância.<br>
+      Solicite uma análise gratuita do seu perfil no Google.
+    </p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/sid_up_digital" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/5585987680142" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.12 1.533 5.853L.057 23.57a.5.5 0 00.611.665l5.93-1.562A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.239-1.486l-.375-.224-3.882 1.022 1.018-3.768-.246-.395A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      </a>
+      <a href="https://g.page/r/CZ_rHaK3Rhn_EBM/review" target="_blank" rel="noopener" aria-label="Google">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFC107" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      </a>
+    </div>
+    <div class="footer-whatsapp-line">
+      📱 WhatsApp: <a href="https://wa.me/5585987680142" target="_blank" rel="noopener">(85) 98768-0142</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/sid_up_digital" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://g.page/r/CZ_rHaK3Rhn_EBM/review" target="_blank" rel="noopener">Avalie no Google</a>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+    <div class="footer-copy">© 2025 Sid Up Digital. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<!-- ═══ BOTÃO FLUTUANTE WHATSAPP ══════════════════════ -->
+<a href="https://wa.me/5585987680142?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20gr%C3%A1tis%20do%20meu%20Google%20Meu%20Neg%C3%B3cio"
+   target="_blank" rel="noopener"
+   class="wa-float"
+   aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.12 1.533 5.853L.057 23.57a.5.5 0 00.611.665l5.93-1.562A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.953 9.953 0 01-5.239-1.486l-.375-.224-3.882 1.022 1.018-3.768-.246-.395A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- ═══ JAVASCRIPT ═════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Rolagem suave ── */
+  document.querySelectorAll('.nav-link, a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var target = this.getAttribute('data-target') || (this.getAttribute('href') || '').replace('#', '');
+      var el = document.getElementById(target);
+      if (el) {
+        e.preventDefault();
+        var headerH = document.getElementById('header').offsetHeight;
+        var top = el.getBoundingClientRect().top + window.pageYOffset - headerH;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        // Fechar menu mobile
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('active');
+        document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  /* ── Menu hamburguer ── */
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  /* ── Acordeão de Serviços ── */
+  document.querySelectorAll('.accordion-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = this.closest('.accordion-item');
+      var body = item.querySelector('.accordion-body');
+      var isOpen = item.classList.contains('open');
+
+      // Fechar todos
+      document.querySelectorAll('.accordion-item').forEach(function (i) {
+        i.classList.remove('open');
+        i.querySelector('.accordion-body').classList.remove('open');
+        i.querySelector('.accordion-btn').setAttribute('aria-expanded', 'false');
+      });
+
+      // Abrir o clicado (toggle)
+      if (!isOpen) {
+        item.classList.add('open');
+        body.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Acordeão do FAQ ── */
+  document.querySelectorAll('.faq-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = this.closest('.faq-item');
+      var body = item.querySelector('.faq-body');
+      var isOpen = item.classList.contains('open');
+
+      // Fechar todos
+      document.querySelectorAll('.faq-item').forEach(function (i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-body').classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+
+      // Abrir o clicado (toggle)
+      if (!isOpen) {
+        item.classList.add('open');
+        body.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Formulário de contato ── */
+  var form = document.getElementById('contactForm');
+  var formSuccess = document.getElementById('formSuccess');
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var valid = true;
+
+    // Nome
+    var nome = document.getElementById('f-nome');
+    var fgNome = document.getElementById('fg-nome');
+    if (!nome.value.trim()) {
+      fgNome.classList.add('invalid');
+      valid = false;
+    } else {
+      fgNome.classList.remove('invalid');
+    }
+
+    // Telefone
+    var tel = document.getElementById('f-tel');
+    var fgTel = document.getElementById('fg-tel');
+    if (!tel.value.trim()) {
+      fgTel.classList.add('invalid');
+      valid = false;
+    } else {
+      fgTel.classList.remove('invalid');
+    }
+
+    // E-mail
+    var email = document.getElementById('f-email');
+    var fgEmail = document.getElementById('fg-email');
+    if (!email.value.trim() || !validateEmail(email.value.trim())) {
+      fgEmail.classList.add('invalid');
+      valid = false;
+    } else {
+      fgEmail.classList.remove('invalid');
+    }
+
+    // Negócio
+    var negocio = document.getElementById('f-negocio');
+    var fgNegocio = document.getElementById('fg-negocio');
+    if (!negocio.value) {
+      fgNegocio.classList.add('invalid');
+      valid = false;
+    } else {
+      fgNegocio.classList.remove('invalid');
+    }
+
+    if (valid) {
+      // ─────────────────────────────────────────────────────────────
+      // GOOGLE SHEETS — cole aqui a URL gerada no Apps Script
+      // Substitua o valor abaixo pela URL real após seguir o passo a passo
+      var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwn4cLc1vua1zBUFsGN_sK6n90A1pbO1kaH-UgLEEME67EzXlZV5IQ8qPeXYYo9WWCD/exec';
+      // ─────────────────────────────────────────────────────────────
+
+      var submitBtn = form.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      var data = new FormData();
+      data.append('nome',     nome.value.trim());
+      data.append('telefone', tel.value.trim());
+      data.append('email',    email.value.trim());
+      data.append('negocio',  negocio.value);
+
+      fetch(SHEET_URL, { method: 'POST', body: data })
+        .then(function () {
+          form.style.display = 'none';
+          formSuccess.style.display = 'block';
+        })
+        .catch(function () {
+          // Mesmo se houver erro de CORS o dado já chegou na planilha
+          form.style.display = 'none';
+          formSuccess.style.display = 'block';
+        });
+    }
+  });
+
+  // Remover classe invalid ao digitar
+  ['f-nome','f-tel','f-email','f-negocio'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
+      this.closest('.form-group').classList.remove('invalid');
+    });
+  });
+
+  /* ── Header shadow ao rolar ── */
+  window.addEventListener('scroll', function () {
+    var header = document.getElementById('header');
+    if (window.pageYOffset > 40) {
+      header.style.boxShadow = '0 4px 32px rgba(0,0,0,0.6)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  }, { passive: true });
+
+})();
+</script>
+
+</body>
+</html>
